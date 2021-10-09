@@ -1,0 +1,17 @@
+[package]
+name = "riscv_os"
+version = "0.1.0"
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+bbl =   { path = "crate/bbl" }
+riscv = { git = "https://github.com/xy-plus/riscv", features = ["inline-asm"] }
+# Cargo.toml
+
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+panic = "abort"
